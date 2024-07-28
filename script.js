@@ -25,7 +25,6 @@ let availableFuel = 50;
 const decreaseFuel=1;
 
 
-
 const desiredWidth = 100;
 const desiredHeight = 100;
 let gameOver = false;
