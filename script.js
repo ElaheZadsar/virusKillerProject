@@ -11,7 +11,7 @@ const fuelImg = new Image();
 
 let imgX = (canvas.width - 100) / 2;
 let imgY = canvas.height - 100;
-
+//opirgoiu
 let bullets = [];
 const bulletSpeed = 5;
 const bulletWidth = 20;
