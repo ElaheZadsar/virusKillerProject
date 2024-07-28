@@ -41,13 +41,12 @@ function fuel(){
         gameOver = true;
     }
 }
-const fuelD = setInterval(() => {
+setInterval(() => {
         if (availableFuel > 0) {
             availableFuel -= decreaseFuel;
         }
     }, 1000
-)
-
+);
 function drawImage() {
     context.clearRect(0, 0, canvas.width, canvas.height);
     context.drawImage(img, imgX, imgY, desiredWidth, desiredHeight);
