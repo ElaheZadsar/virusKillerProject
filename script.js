@@ -23,6 +23,7 @@ let fuels = [];
 let availableBullets = 0;
 let availableFuel = 50;
 const decreaseFuel=1;
+// const health = 0;
 
 
 const desiredWidth = 100;
@@ -105,9 +106,12 @@ function checkCollisions() {
                 bullet.x + bullet.width > virus.x &&
                 bullet.y < virus.y + virus.height &&
                 bullet.y + bullet.height > virus.y) {
-                score += virus.score;
-                viruses.splice(viruses.indexOf(virus), 1);
+                viruses.health --;
                 bullets.splice(bullets.indexOf(bullet), 1);
+                if (viruses.health<= 0){
+                    score = score + virus.score;
+                    viruses.splice(viruses.indexOf(virus), 1);
+                }
                 if (score >= winScore) {
                     gameOver = true;
                 }
@@ -155,7 +159,13 @@ function virusCrashesPlane() {
         }
     }
 }
-//فثس6
+
+function calculateBulletsForEachVirus(viruses){
+    let health = viruses.length;
+
+    return health;
+}
+
 function randomVirus() {
     const x = Math.random() * (canvas.width - 50); //random position
     const speedY = 1 + Math.random(); //random speed
@@ -273,6 +283,7 @@ function virusAnimation() {
         virusCrashesPlane();
         checkMagazineCollisions();
         checkFuelCollisions(); // check for fuel collection
+        calculateBulletsForEachVirus();
         updateBullets();
         checkCollisions();
         drawImage();
@@ -284,4 +295,3 @@ function virusAnimation() {
     update();
 }
 
-heal
