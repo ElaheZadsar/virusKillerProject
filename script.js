@@ -155,7 +155,7 @@ function virusCrashesPlane() {
         }
     }
 }
-//فثس6
+
 function randomVirus() {
     const x = Math.random() * (canvas.width - 50); //random position
     const speedY = 1 + Math.random(); //random speed
@@ -284,3 +284,4 @@ function virusAnimation() {
     update();
 }
 
+heal
